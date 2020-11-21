@@ -7,4 +7,4 @@ http://xurl.ga
 3.不用数据库，支持PHP即可  
 4.静态html跳转  
 ## 开发者
-[xihale](https://xihale.top)
+[xihale](https://xihale.top){:target="_blank"}
