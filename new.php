@@ -18,7 +18,7 @@ if($Sfile=='')
 	$Sfile=$i;
 }
 //判断目录是否存在或管理员直接覆盖
-if(cha_dwz($Sfile)==-1||$_GET['key']=="Hanliang@4107")
+if(cha_dwz($Sfile)==-1)//||$_GET['key']=="YourKey")
 {
 	$filename="http://".$_SERVER['SERVER_NAME'].'/?s='.$Sfile;
 	echo "您的短链接是：<a style=\"text-decoration:none\" class=\"tl-price-input\" href =\"$filename\" target=\"_blank\">".$filename."&nbsp;</a>";//输出短链接地址
