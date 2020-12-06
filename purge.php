@@ -5,7 +5,14 @@ $file=explode("\n",fread($fp,filesize("day")));
 $day=date("Ymd");
 for($i=sizeof($file);$i>=0;$i--)
 {
-	$x=explode(" ",$file[$i]);
+	if($file[$i]=="")continue;
+	$x=explode(" ",$file[$i]);$sum=0;
+	for($j=sizeof($file);$j>=0;$j--)
+	{
+		$x1=explode(" ",$file[$j]);
+		if($x[0]==$x1[0])$sum++;
+		if($x[0]==$x1[0]&&$sum>1)$file[$j]="";
+	}
 	if($day>$x[1]&&$x[1]!="")
 	{
 		deldir($x[0]);
