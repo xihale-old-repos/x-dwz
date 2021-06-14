@@ -1,19 +1,24 @@
 <!doctype html>
 <html>
 <head>
-	<script src="surl.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+	<script src="surl.js"></script>
 	<title>xihale-链接缩短</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xihale/-test@master/input-btn.css">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="https://xihale.gitee.io/test/input.css">
+	<script src="https://xihale.gitee.io/test/spop/spop.min.js"></script>
+	<link rel="stylesheet" href="https://xihale.gitee.io/test/spop/spop.min.css">
+	<meta charset="utf-8">
 </head>
 <body>
-	<form method="get" action="new.php">
-	<input style="width:400px;" name="url" class="tl-price-input" type="text" placeholder="长url"><br><br>
-	<input style="width:100px;color: red;"  class="tl-price-input" value="http://xurl.ga/?s=" readonly="readonly">
-	<input style="width:300px;" name="file" class="tl-price-input" type="text" placeholder="url"><br><br>
-	<input style="width:400px;" name="day" class="tl-price-input" type="text" placeholder="1-365" oninput="value=value.replace(/[^\d]/g,'')"><br><br>
-	<input type="submit" class="ant-btn ant-btn-red" value="确定">
-	</form>
-	<script src="https://cdn.jsdelivr.net/gh/xihale/-test@master/bg-image.js" defer></script>
-</body>
-</html>
+	<style>
+	</style>
+	<form method="get" action="new.php" class="loginmain">
+	<div class="login-con">
+		<input name="url" placeholder="long-url" autocomplete="off"><br>
+		<input name="file" placeholder="short-url" autocomplete="off"><br>
+		<input name="day" placeholder="1-365" oninput="value=value.replace(/[^\d]/g,'')" autocomplete="off">
+		<div class="login-btn">
+			<input type="submit" value="确定">
+		</div>
+	</div></form>
+</body></html>

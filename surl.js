@@ -1,19 +1,26 @@
-var $_GET = (function(){
+function get(){
     var url = window.document.location.href.toString();
     var u = url.split("?");
-    if(typeof(u[1]) == "string"){
-        u = u[1].split("&");
-        var get = {};
-        for(var i in u){
-            var j = u[i].split("=");
-            get[j[0]] = j[1];
-        }
-        return get;
-    } else {
-        return {};
-    }
-})();
-if($_GET['s']!==undefined)
+    return u[1];
+}
+var url=get();
+if(url!==undefined&&url!=="")
 {
-	window.location.href="http://xurl.ga/s.php?s="+$_GET['s'];
+	$.get(location.origin+"/s.php",{"s":url},function(data){
+		if(data!="error")
+		{
+			spop({
+				template: '\u8df3\u8f6c\u6210\u529f',
+				style: 'success',//[error] [warning]
+			});
+			window.location.href=data;
+		}
+		else{
+			spop({
+				template: '\u6b64\u77ed\u94fe\u63a5\u65e0\u6548!',
+				style: 'error',
+				autoclose:3000
+			});
+		}
+	});
 }

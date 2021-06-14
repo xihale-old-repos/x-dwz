@@ -1,7 +1,8 @@
 <?php
 include("function.php");
-$fp=fopen("day","r");
-$file=explode("\n",fread($fp,filesize("day")));
+include("config.php");
+$fp=fopen($value_file,"r");
+$file=explode("\n",fread($fp,filesize($value_file)));
 $day=date("Ymd");
 for($i=sizeof($file);$i>=0;$i--)
 {
@@ -15,14 +16,13 @@ for($i=sizeof($file);$i>=0;$i--)
 	}
 	if($day>$x[1]&&$x[1]!="")
 	{
-		deldir($x[0]);
 		echo "已删除".$x[0]."<br>";
 		$file[$i]="";
 	}
 }
 fclose($fp);
 //写入新文件
-$fp=fopen("day","w");
+$fp=fopen($value_file,"w");
 foreach ($file as $x)
 {
 	if($x!="")

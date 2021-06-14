@@ -1,30 +1,9 @@
 <?php
-function deldir($dir) {
-   //先删除目录下的文件：
-   $dh=opendir($dir);
-   while ($file=readdir($dh)) {
-      if($file!="." && $file!="..") {
-         $fullpath=$dir."/".$file;
-         if(!is_dir($fullpath)) {
-            unlink($fullpath);
-         } else {
-            deldir($fullpath);
-         }
-      }
-   }
-   closedir($dh);
-   //删除当前文件夹：
-   if(rmdir($dir)) {
-      return true;
-   } else {
-      return false;
-   }
-}
-function cha_dwz($a)
+function cha_dwz($a,$value_file)
 {
-	if(filesize("day")==0)return -1;
-	$fp=fopen("day",'r');
-	$file=explode("\n",fread($fp,filesize("day")));
+	if(filesize($value_file)==0)return -1;
+	$fp=fopen($value_file,'r');
+	$file=explode("\n",fread($fp,filesize($value_file)));
 	for($i=sizeof($file);$i>=0;$i--)
 	{
 		$x=explode(" ",$file[$i]);
